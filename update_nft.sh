@@ -23,7 +23,8 @@ do
     # 如果状态码为0，表示连接成功，如果为7，表示连接失败
     status=$(curl -s -o /dev/null -w "%{http_code}" $qb_addr_url)
     # 使用if语句来判断状态码是否为7
-    if [ $status -eq 7 ] then
+    if [ $status -eq 7 ]
+    then
         # 如果为7，表示连接失败，就等待一秒，然后尝试重新连接
         sleep 1
         # 尝试次数加一
